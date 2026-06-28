@@ -443,7 +443,7 @@ function currentStreak(){
 function checkWeekReset(){
   const m = ymd(mondayOf(new Date()));
   if(S.weekStart !== m){
-    if(S.weekStart){ S.todos = []; } // new week wipes todos
+    
     S.weekStart = m;
     save();
   }
@@ -749,7 +749,7 @@ function renderTodos(){
   }
   // week reset note
   const next=mondayOf(new Date()); next.setDate(next.getDate()+7);
-  document.getElementById('weekreset').textContent='list clears '+next.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
+  document.getElementById('weekreset').textContent='';
 }
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 
